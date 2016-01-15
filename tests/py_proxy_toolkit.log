@@ -1,0 +1,97 @@
+2016-01-15 22:38:20,337 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 22:39:14,793 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 22:39:37,097 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 22:43:25,352 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 22:43:42,599 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 22:43:42,600 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name=' out.txt' mode='w' encoding='UTF-8'>])
+2016-01-15 22:44:04,664 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 22:44:04,665 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>])
+2016-01-15 23:04:15,388 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:04:15,411 - PyProxyToolkit.defines - DEBUG - [<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>]
+2016-01-15 23:05:11,969 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:05:11,971 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=5)
+2016-01-15 23:06:39,515 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:06:39,516 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=5)
+2016-01-15 23:08:11,234 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:11:27,559 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:14:07,747 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:14:07,749 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:14:57,123 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:15:31,250 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:15:31,251 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:15:55,208 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:15:55,209 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:17:01,176 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:17:01,177 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:17:20,666 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:17:20,667 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:17:29,190 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:17:29,192 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:17:40,878 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:17:40,879 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:18:12,639 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:18:12,640 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:18:39,401 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:18:39,402 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:18:56,720 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:18:56,722 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:19:13,279 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:19:13,280 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:19:55,115 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:20:55,092 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:20:55,094 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:21:10,471 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:21:10,472 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:21:43,996 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:21:43,997 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:22:06,781 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:22:06,784 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:22:25,484 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:22:25,486 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:22:47,916 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:22:47,918 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:23:17,127 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:23:17,128 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:23:39,178 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:24:12,219 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:27:02,295 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:27:42,316 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:29:08,706 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:29:08,707 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:29:38,804 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:29:56,659 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:29:56,661 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>])
+2016-01-15 23:31:39,466 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:32:01,078 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:32:01,079 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:32:12,629 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:32:30,213 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:32:30,215 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name=' out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:32:56,123 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:32:56,124 - PyProxyToolkit.defines - DEBUG - Namespace(i=[<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>], o=[<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>], t=[10])
+2016-01-15 23:35:48,795 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:35:48,796 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:36:00,160 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:36:00,162 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:36:21,575 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:36:21,576 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:37:31,318 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:37:31,319 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:37:51,169 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:37:51,170 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:38:04,560 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:38:04,561 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:39:05,439 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:39:05,441 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:39:16,106 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:39:16,107 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:40:12,361 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:40:12,363 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:40:17,541 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:40:17,542 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:51:43,285 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:51:43,286 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:51:47,040 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:51:47,042 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)
+2016-01-15 23:51:59,484 - PyProxyToolkit.defines - DEBUG - PyProxyToolkit.Console init
+2016-01-15 23:51:59,485 - PyProxyToolkit.defines - DEBUG - Namespace(i=<_io.TextIOWrapper name='in.txt' mode='r' encoding='UTF-8'>, o=<_io.TextIOWrapper name='out.txt' mode='w' encoding='UTF-8'>, t=10)

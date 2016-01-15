@@ -1,0 +1,9 @@
+2016-01-15 23:34:26,774 - defines - DEBUG - __main__ init
+2016-01-15 23:34:42,694 - defines - DEBUG - __main__ init
+2016-01-15 23:34:42,695 - defines - DEBUG - Namespace(i=[<open file '../tests/in.txt', mode 'r' at 0x101b76300>], o=[<open file '../tests/out.txt', mode 'w' at 0x101b76390>], t=5)
+2016-01-15 23:34:56,815 - defines - DEBUG - __main__ init
+2016-01-15 23:34:56,817 - defines - DEBUG - Namespace(i=[<open file '../tests/in.txt', mode 'r' at 0x10492d300>], o=[<open file '../tests/out.txt', mode 'w' at 0x10492d390>], t=[10])
+2016-01-15 23:35:00,635 - defines - DEBUG - __main__ init
+2016-01-15 23:35:00,637 - defines - DEBUG - Namespace(i=[<open file '../tests/in.txt', mode 'r' at 0x1006f1300>], o=[<open file '../tests/out.txt', mode 'w' at 0x1006f1390>], t=[10])
+2016-01-15 23:35:28,871 - defines - DEBUG - __main__ init
+2016-01-15 23:35:28,872 - defines - DEBUG - Namespace(i=<open file '../tests/in.txt', mode 'r' at 0x101e73300>, o=<open file '../tests/out.txt', mode 'w' at 0x101e73390>, t=10)
