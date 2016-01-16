@@ -1,4 +1,7 @@
 from .defines import defines
+from .proxy import Proxy
+from .check import Check
+from .strategies.httpbinStrategy import HttpbinStrategy
 import logging
 import threading
 
@@ -8,6 +11,7 @@ class Worker(threading.Thread):
         self.threadID = threadID
         self.q = q
         self.name = name
+        self.checker = Check(HttpbinStrategy())
         self.logger = logging.getLogger(defines.LOGGER_NAME)
         self.logger.debug("Start worker {0} ({1})".format(self.name, self.threadID))
 
@@ -15,9 +19,11 @@ class Worker(threading.Thread):
         while True:
             data = self.q.get()
 
-            host = data['host']
-            port = data['port']
-            msg = "OK"
-            self.logger.debug("{3} - {0}:{1} - {2}".format(host, port, msg, self.name))
+            self.checker.check(data)
+            msg = "Fail"
+            if data.isValid is True:
+                msg = "Ok"
+
+            self.logger.debug("{3} - {0}:{1} - {2}".format(data.host, data.port, msg, self.name))
 
             self.q.task_done()

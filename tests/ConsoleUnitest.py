@@ -1,7 +1,7 @@
 import unittest
 import sys
 
-from PyProxyToolkit import Console
+from PyProxyToolkit import console
 
 class ConsoleCase(unittest.TestCase):
     def suite(self):
@@ -10,14 +10,14 @@ class ConsoleCase(unittest.TestCase):
         return suite
 
     def setUp(self):
-        self.threads = 2;
+        self.threads = 5;
         sys.argv = [sys.argv[0], '-i=in.txt', '-o=out.txt', '-t='+str(self.threads)]
-        self.console = Console.Console()
+        self.console = console.Console()
 
     def test_properties(self):
         self.assertEquals(self.console.inFile.name, "in.txt")
         self.assertEquals(self.console.outFile.name, "out.txt")
-        self.assertEquals(self.console.numOfTheads, self.threads)
+        self.assertEquals(self.console.numOfThreads, self.threads)
 
 if __name__ == '__main__':
     unittest.main()

@@ -2,6 +2,7 @@
 
 from .defines import defines
 from .worker import Worker
+from .proxy import Proxy
 import logging
 import argparse
 import threading
@@ -11,7 +12,7 @@ class Console:
     def __init__(self):
         self.inFile=None
         self.outFile=None
-        self.numOfTheads=defines.NUM_OF_THREADS
+        self.numOfThreads=defines.NUM_OF_THREADS
 
         # Configure
         self.configure()
@@ -53,14 +54,14 @@ class Console:
         self.logger.debug(args)
         self.inFile = args.i
         self.outFile = args.o
-        self.numOfTheads = args.t
+        self.numOfThreads = args.t
 
     def run(self):
         queueLock = threading.Lock()
         workQueue = queue.Queue()
         threads = []
 
-        for i in range(self.numOfTheads):
+        for i in range(self.numOfThreads):
             thread = Worker(i, "Worker-"+str(i), workQueue)
             thread.setDaemon(True)
             thread.start()
@@ -69,7 +70,8 @@ class Console:
         rows = list(map(lambda x: x.split(":"), [line.rstrip('\n') for line in self.inFile]))
 
         for row in rows:
-            workQueue.put({'host': row[0], 'port': row[1]})
+            workQueue.put(Proxy(row[0], row[1]))
+        #workQueue.put({'host': row[0], 'port': row[1]})
 
         workQueue.join()
 
