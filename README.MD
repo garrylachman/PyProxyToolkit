@@ -44,8 +44,8 @@ The checker sends request to strategy url and return the content for validation.
 
 Supported strategies:
 
- 1. httpbin - the strategy and sends request to ```http://httpbin.org/ip``` and validate the proxy ip against the response.
- 2. google - the strategy validate if the proxy is banned on Google
+ 1. **httpbin** - the strategy and sends request to ```http://httpbin.org/ip``` and validate the proxy ip against the response.
+ 2. **google** - the strategy validate if the proxy is banned on Google
 
 
 ##Licence
