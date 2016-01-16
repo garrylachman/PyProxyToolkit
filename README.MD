@@ -6,6 +6,8 @@ Copyright (C) 2016 Garry Lachman <garry@lachman.co> under GNU LGPL
 
 https://rev.proxies.online
 
+Strategies: httpbin (validate ip, default), google (validate if banned on google)
+
 ##Installing
 Download the source code from github and run:
 
@@ -17,6 +19,7 @@ python3 setup.py install
 ```
 python3 -m PyProxyToolkit.Console -h
 usage: Console.py [-h] -i I -o O [-t T] [-x X]
+                   [-s {httpbinStrategy,googleStrategy}]
 
 PyProxyChecker
 
@@ -26,19 +29,22 @@ optional arguments:
   -o O        Proxy list out file
   -t T        Number of threads
   -x X        Timeout in sec
+  -s {httpbinStrategy,googleStrategy}
+                        Select strategy - httpbinStrategy,googleStrategy
 ```
 example
 
 ```
-python3 -m PyProxyToolkit.Console -i in.txt -o out.txt -t 30 -X 30
+python3 -m PyProxyToolkit.Console -i in.txt -o out.txt -t 30 -X 30 -s googleStrategy
 ```
 
 ##Strategies
-Strategy provide the request url we use with the proxy and the maching 
-logic against the response.
+Strategy provide the request url and matching logic.
+The checker sends request to strategy url and return the content for validation.
 
-Currenly we implemented httpbin.org strategy and sends request to 
-```http://httpbin.org/ip``` and validate the proxy ip and the response ip
+Supported strategies:
+1. httpbin - the strategy and sends request to ```http://httpbin.org/ip``` and validate the proxy ip against the response.
+2. google - the strategy validate if the proxy is banned on Google
 
 
 ##Licence

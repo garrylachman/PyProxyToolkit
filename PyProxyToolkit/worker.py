@@ -15,18 +15,26 @@ from .defines import defines
 from .proxy import Proxy
 from .check import Check
 from .strategies.httpbinStrategy import HttpbinStrategy
+from .strategies.googleStrategy import GoogleStrategy
 import logging
 import threading
 
 class Worker(threading.Thread):
-    def __init__(self, threadID, name, q, timeout, results):
+    def __init__(self, threadID, name, q, timeout, strategy,results):
         threading.Thread.__init__(self)
         self.threadID = threadID
         self.q = q
         self.name = name
         self.results = results
         self.timeout = timeout
-        self.checker = Check(HttpbinStrategy(), self.timeout)
+
+        if strategy == defines.HTTPBIN_STRATEGY:
+            self.strategy = HttpbinStrategy()
+        elif strategy == defines.GOOGLE_STRATEGY:
+            self.strategy = GoogleStrategy()
+        # Todo: rise exception if not stragegy found
+
+        self.checker = Check(self.strategy, self.timeout)
         self.logger = logging.getLogger(defines.LOGGER_NAME)
         self.logger.debug("Start worker {0} ({1})".format(self.name, self.threadID))
 

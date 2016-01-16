@@ -27,6 +27,7 @@ class Console:
         self.outFile=None
         self.numOfThreads=defines.NUM_OF_THREADS
         self.timeout=defines.TIMEOUT
+        self.strategy=None
 
         # Configure
         self.configure()
@@ -64,6 +65,7 @@ class Console:
         parser.add_argument('-o', required=True, type=argparse.FileType('w'), help='Proxy list out file')
         parser.add_argument('-t', default=defines.NUM_OF_THREADS, type=int, help='Number of threads')
         parser.add_argument('-x', default=defines.TIMEOUT, type=int, help='Timeout in sec')
+        parser.add_argument('-s', default=defines.DEFAULT_STRATEGY, choices=defines.STRATEGIES, help='Select strategy - {0}'.format(','.join(defines.STRATEGIES)))
 
         args = parser.parse_args()
         self.logger.debug(args)
@@ -71,6 +73,8 @@ class Console:
         self.outFile = args.o
         self.numOfThreads = args.t
         self.timeout = args.x
+        self.strategy = args.s
+
 
     def run(self):
         queue_lock = threading.Lock()
@@ -79,7 +83,7 @@ class Console:
         results = []
 
         for i in range(self.numOfThreads):
-            thread = Worker(i, "Worker-"+str(i), work_queue, self.timeout, results)
+            thread = Worker(i, "Worker-"+str(i), work_queue, self.timeout, self.strategy, results)
             thread.setDaemon(True)
             thread.start()
             threads.append(thread)

@@ -14,7 +14,7 @@ See the GNU Lesser General Public License for more details.
 import unittest
 import sys
 
-from PyProxyToolkit import console
+from PyProxyToolkit import Console
 
 class ConsoleCase(unittest.TestCase):
     def suite(self):
@@ -25,14 +25,16 @@ class ConsoleCase(unittest.TestCase):
     def setUp(self):
         self.threads = 5;
         self.timeout = 10
-        sys.argv = [sys.argv[0], '-i=in.txt', '-o=out.txt', '-t='+str(self.threads), '-x='+str(self.timeout)]
-        self.console = console.Console()
+        self.strategy = 'googleStrategy'
+        sys.argv = [sys.argv[0], '-i=in.txt', '-o=out.txt', '-t='+str(self.threads), '-x='+str(self.timeout), '-s='+str(self.strategy)]
+        self.console = Console.Console()
 
     def test_properties(self):
         self.assertEquals(self.console.inFile.name, "in.txt")
         self.assertEquals(self.console.outFile.name, "out.txt")
         self.assertEquals(self.console.numOfThreads, self.threads)
         self.assertEquals(self.console.timeout, self.timeout)
+        self.assertEquals(self.console.strategy, self.strategy)
 
 if __name__ == '__main__':
     unittest.main()

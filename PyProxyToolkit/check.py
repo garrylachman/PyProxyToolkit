@@ -27,8 +27,14 @@ class Check:
         self.logger = logging.getLogger(defines.LOGGER_NAME)
 
     def check(self, proxy: Proxy):
-        proxy_provider = urllib.request.ProxyHandler({'http': '{0}:{1}'.format(proxy.host, str(proxy.port))})
+        proxy_provider = urllib.request.ProxyHandler({
+            'http': '{0}:{1}'.format(proxy.host, str(proxy.port)),
+            'https': '{0}:{1}'.format(proxy.host, str(proxy.port))
+        })
         opener = urllib.request.build_opener(proxy_provider)
+        opener.addheaders = [
+            ('User-agent', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36')
+        ]
 
         try:
             res = opener.open(self.strategy.url, timeout=self.timeout)

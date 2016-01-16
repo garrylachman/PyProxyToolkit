@@ -11,16 +11,19 @@ without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
 See the GNU Lesser General Public License for more details.
 """
 
-from distutils.core import setup
+from .strategyAbstract import StrategyAbstract
+from ..proxy import Proxy
+import sys
 
-setup(
-        name='PyProxyToolkit',
-        version='0.0.2',
-        packages=['PyProxyToolkit', 'PyProxyToolkit.strategies'],
-        py_modules=['PyProxyToolkit.Console'],
-        url='http://rev.proxies.online',
-        license='GPL',
-        author='Garry Lachman',
-        author_email='garry@lachman.co',
-        description='Python proxy checker toolkit'
-)
+class GoogleStrategy(StrategyAbstract):
+    def __init__(self):
+        super(GoogleStrategy, self).__init__()
+        self.url = 'https://www.google.com/search?q=rev.proxies.online'
+
+    def match(self, response, proxy: Proxy):
+        try:
+            return str(response).find("Sorry...") == -1 and str(response).find("'captcha'") == -1
+        except:
+            self.logger.error(sys.exc_info()[0])
+
+        return False

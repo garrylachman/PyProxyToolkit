@@ -16,5 +16,9 @@ def defines():
     defines.LOGGER_FILE = 'py_proxy_toolkit.log'
     defines.NUM_OF_THREADS = 5
     defines.TIMEOUT = 30
+    defines.HTTPBIN_STRATEGY = "httpbinStrategy"
+    defines.GOOGLE_STRATEGY = "googleStrategy"
+    defines.DEFAULT_STRATEGY = defines.HTTPBIN_STRATEGY
+    defines.STRATEGIES = [defines.HTTPBIN_STRATEGY, defines.GOOGLE_STRATEGY]
 
 defines()
