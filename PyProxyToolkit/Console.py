@@ -13,6 +13,7 @@ class Console:
         self.inFile=None
         self.outFile=None
         self.numOfThreads=defines.NUM_OF_THREADS
+        self.timeout=defines.TIMEOUT
 
         # Configure
         self.configure()
@@ -49,20 +50,23 @@ class Console:
         parser.add_argument('-i', required=True, type=argparse.FileType('r'), help='Proxy list in file')
         parser.add_argument('-o', required=True, type=argparse.FileType('w'), help='Proxy list out file')
         parser.add_argument('-t', default=defines.NUM_OF_THREADS, type=int, help='Number of threads')
+        parser.add_argument('-x', default=defines.TIMEOUT, type=int, help='Timeout in sec')
 
         args = parser.parse_args()
         self.logger.debug(args)
         self.inFile = args.i
         self.outFile = args.o
         self.numOfThreads = args.t
+        self.timeout = args.x
 
     def run(self):
-        queueLock = threading.Lock()
-        workQueue = queue.Queue()
+        queue_lock = threading.Lock()
+        work_queue = queue.Queue()
         threads = []
+        results = []
 
         for i in range(self.numOfThreads):
-            thread = Worker(i, "Worker-"+str(i), workQueue)
+            thread = Worker(i, "Worker-"+str(i), work_queue, self.timeout, results)
             thread.setDaemon(True)
             thread.start()
             threads.append(thread)
@@ -70,10 +74,13 @@ class Console:
         rows = list(map(lambda x: x.split(":"), [line.rstrip('\n') for line in self.inFile]))
 
         for row in rows:
-            workQueue.put(Proxy(row[0], row[1]))
-        #workQueue.put({'host': row[0], 'port': row[1]})
+            work_queue.put(Proxy(row[0], row[1]))
 
-        workQueue.join()
+        work_queue.join()
+
+        out_rows = list(map(lambda x: '{0}:{1}'.format(x.host, x.port), results))
+        [self.outFile.write('{0}\n'.format(line)) for line in out_rows]
+        self.logger.debug(out_rows)
 
 
 if __name__ == "__main__":

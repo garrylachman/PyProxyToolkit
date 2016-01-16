@@ -1,7 +1,7 @@
 from .strategyAbstract import StrategyAbstract
 from ..proxy import Proxy
 import json
-
+import sys
 
 class HttpbinStrategy(StrategyAbstract):
     def __init__(self):
@@ -11,8 +11,8 @@ class HttpbinStrategy(StrategyAbstract):
     def match(self, response, proxy: Proxy):
         json_response = json.loads(response)
         try:
-            return json_response['origin'] == proxy.host
+            return str(json_response['origin']).find(proxy.host) > -1
         except:
-            self.logger.error("{0} - {1}:{2}".format(response, proxy.host, str(proxy.port)))
+            self.logger.error(sys.exc_info()[0])
 
         return False
