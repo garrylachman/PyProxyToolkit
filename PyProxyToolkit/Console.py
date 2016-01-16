@@ -1,17 +1,26 @@
 #!/usr/bin/env python
 
 from .defines import defines
+from .worker import Worker
 import logging
 import argparse
+import threading
+import queue
 
 class Console:
     def __init__(self):
         self.inFile=None
         self.outFile=None
         self.numOfTheads=defines.NUM_OF_THREADS
+
+        # Configure
         self.configure()
-        self.logger.debug(__name__ + " init")
+
+        # Read arguments
         self.parseArgs()
+
+        # Start process
+        self.run()
 
     def configure(self):
         self.logger = logging.getLogger(defines.LOGGER_NAME)
@@ -19,7 +28,7 @@ class Console:
 
         # create file handler which logs even debug messages
         fh = logging.FileHandler(defines.LOGGER_FILE)
-        fh.setLevel(logging.DEBUG)
+        fh.setLevel(logging.ERROR)
 
         # create console handler with a higher log level
         ch = logging.StreamHandler()
@@ -46,7 +55,23 @@ class Console:
         self.outFile = args.o
         self.numOfTheads = args.t
 
+    def run(self):
+        queueLock = threading.Lock()
+        workQueue = queue.Queue()
+        threads = []
 
+        for i in range(self.numOfTheads):
+            thread = Worker(i, "Worker-"+str(i), workQueue)
+            thread.setDaemon(True)
+            thread.start()
+            threads.append(thread)
+
+        rows = list(map(lambda x: x.split(":"), [line.rstrip('\n') for line in self.inFile]))
+
+        for row in rows:
+            workQueue.put({'host': row[0], 'port': row[1]})
+
+        workQueue.join()
 
 
 if __name__ == "__main__":

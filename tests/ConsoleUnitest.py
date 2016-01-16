@@ -10,13 +10,14 @@ class ConsoleCase(unittest.TestCase):
         return suite
 
     def setUp(self):
-        sys.argv = [sys.argv[0], '-i=in.txt', '-o=out.txt', '-t=10']
+        self.threads = 2;
+        sys.argv = [sys.argv[0], '-i=in.txt', '-o=out.txt', '-t='+str(self.threads)]
         self.console = Console.Console()
 
     def test_properties(self):
         self.assertEquals(self.console.inFile.name, "in.txt")
         self.assertEquals(self.console.outFile.name, "out.txt")
-        self.assertEquals(self.console.numOfTheads, 10)
+        self.assertEquals(self.console.numOfTheads, self.threads)
 
 if __name__ == '__main__':
     unittest.main()
