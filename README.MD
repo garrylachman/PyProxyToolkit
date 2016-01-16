@@ -6,7 +6,7 @@ Copyright (C) 2016 Garry Lachman <garry@lachman.co> under GNU LGPL
 
 https://rev.proxies.online
 
-Strategies: httpbin (validate ip, default), google (validate if banned on google)
+**Strategies:** *httpbinStrategy* (validate ip, default), *googleStrategy* (validate if banned on google)
 
 ##Installing
 Download the source code from github and run:
@@ -43,8 +43,9 @@ Strategy provide the request url and matching logic.
 The checker sends request to strategy url and return the content for validation.
 
 Supported strategies:
-1. httpbin - the strategy and sends request to ```http://httpbin.org/ip``` and validate the proxy ip against the response.
-2. google - the strategy validate if the proxy is banned on Google
+
+ 1. httpbin - the strategy and sends request to ```http://httpbin.org/ip``` and validate the proxy ip against the response.
+ 2. google - the strategy validate if the proxy is banned on Google
 
 
 ##Licence
