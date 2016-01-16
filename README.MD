@@ -14,6 +14,11 @@ Download the source code from github and run:
 ```
 python3 setup.py install
 ```
+or
+```
+pip3 install PyProxyToolkit
+```
+
 
 ##Using
 ```
