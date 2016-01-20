@@ -4,6 +4,7 @@ PyProxyToolkit/Console.py
 PyProxyToolkit/__init__.py
 PyProxyToolkit/check.py
 PyProxyToolkit/defines.py
+PyProxyToolkit/perpetualTimer.py
 PyProxyToolkit/proxy.py
 PyProxyToolkit/worker.py
 PyProxyToolkit/strategies/__init__.py

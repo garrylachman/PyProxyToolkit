@@ -36,19 +36,26 @@ class Check:
             ('User-agent', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36')
         ]
 
+        res = None
         try:
             res = opener.open(self.strategy.url, timeout=self.timeout)
         except urllib.error.URLError as e:
             self.logger.error(e)
             proxy.isValid = False
+            if res is not None:
+                res.close()
             return False
         except http.client.HTTPException as e:
             self.logger.error(e)
             proxy.isValid = False
+            if res is not None:
+                res.close()
             return False
         except:
             self.logger.error(sys.exc_info()[0])
             proxy.isValid = False
+            if res is not None:
+                res.close()
             return False
 
         response=''
@@ -61,6 +68,7 @@ class Check:
                 except:
                     self.logger.error(sys.exc_info()[0])
                     proxy.isValid = False
+                    res.close()
                     return False
                 continue
             else:
@@ -69,8 +77,10 @@ class Check:
                 except:
                     self.logger.error(sys.exc_info()[0])
                     proxy.isValid = False
+                    res.close()
                     return False
             break
 
+        res.close()
         proxy.isValid = self.strategy.match(response, proxy)
         return proxy.isValid
