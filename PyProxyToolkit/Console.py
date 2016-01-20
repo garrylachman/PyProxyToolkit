@@ -16,6 +16,7 @@ See the GNU Lesser General Public License for more details.
 from .defines import defines
 from .worker import Worker
 from .proxy import Proxy
+from .perpetualTimer import PerpetualTimer
 import logging
 import argparse
 import threading
@@ -23,11 +24,13 @@ import queue
 
 class Console:
     def __init__(self):
-        self.inFile=None
-        self.outFile=None
-        self.numOfThreads=defines.NUM_OF_THREADS
-        self.timeout=defines.TIMEOUT
-        self.strategy=None
+        self.logger = None
+        self.in_file = None
+        self.out_file = None
+        self.num_of_threads = defines.NUM_OF_THREADS
+        self.timeout = defines.TIMEOUT
+        self.strategy = None
+        self.write_interval = defines.WRITE_INTERVAL
 
         # Configure
         self.configure()
@@ -62,19 +65,20 @@ class Console:
     def parseArgs(self):
         parser = argparse.ArgumentParser(description='PyProxyChecker')
         parser.add_argument('-i', required=True, type=argparse.FileType('r'), help='Proxy list in file')
-        parser.add_argument('-o', required=True, type=argparse.FileType('w'), help='Proxy list out file')
+        parser.add_argument('-o', required=True, type=argparse.FileType('a'), help='Proxy list out file (append)')
         parser.add_argument('-t', default=defines.NUM_OF_THREADS, type=int, help='Number of threads')
         parser.add_argument('-x', default=defines.TIMEOUT, type=int, help='Timeout in sec')
-        parser.add_argument('-s', default=defines.DEFAULT_STRATEGY, choices=defines.STRATEGIES, help='Select strategy - {0}'.format(','.join(defines.STRATEGIES)))
+        parser.add_argument('-w', default=defines.WRITE_INTERVAL, type=int, help='Write results to file interval in sec')
+        parser.add_argument('-s', default=defines.DEFAULT_STRATEGY, choices=defines.STRATEGIES, help='Select strategy')
 
         args = parser.parse_args()
         self.logger.debug(args)
-        self.inFile = args.i
-        self.outFile = args.o
-        self.numOfThreads = args.t
+        self.in_file = args.i
+        self.out_file = args.o
+        self.num_of_threads = args.t
         self.timeout = args.x
         self.strategy = args.s
-
+        self.write_interval = args.w
 
     def run(self):
         queue_lock = threading.Lock()
@@ -82,22 +86,36 @@ class Console:
         threads = []
         results = []
 
-        for i in range(self.numOfThreads):
+        for i in range(self.num_of_threads):
             thread = Worker(i, "Worker-"+str(i), work_queue, self.timeout, self.strategy, results)
             thread.setDaemon(True)
             thread.start()
             threads.append(thread)
 
-        rows = list(map(lambda x: x.split(":"), [line.rstrip('\n') for line in self.inFile]))
+        rows = list(map(lambda x: x.split(":"), [line.rstrip('\n') for line in self.in_file]))
 
         for row in rows:
             work_queue.put(Proxy(row[0], row[1]))
 
-        work_queue.join()
+        def write_to_file(_results):
+            # make copy of the results and reset the list
+            local_results = list(_results)
+            _results[:] = []
+            out_rows = list(map(lambda x: '{0}:{1}'.format(x.host, x.port), local_results))
+            [self.out_file.write('{0}\n'.format(line)) for line in out_rows]
+            self.out_file.flush()
+            self.logger.debug('[Write {0} results to file]'.format(len(local_results)))
+            self.logger.debug(out_rows)
 
-        out_rows = list(map(lambda x: '{0}:{1}'.format(x.host, x.port), results))
-        [self.outFile.write('{0}\n'.format(line)) for line in out_rows]
-        self.logger.debug(out_rows)
+        writer = PerpetualTimer(self.write_interval, write_to_file, results)
+        writer.start()
+        work_queue.join()
+        writer.cancel()
+        write_to_file(results)
+
+        #out_rows = list(map(lambda x: '{0}:{1}'.format(x.host, x.port), results))
+        #[self.out_file.write('{0}\n'.format(line)) for line in out_rows]
+        #self.logger.debug(out_rows)
 
 
 if __name__ == "__main__":

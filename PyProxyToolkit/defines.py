@@ -20,5 +20,6 @@ def defines():
     defines.GOOGLE_STRATEGY = "googleStrategy"
     defines.DEFAULT_STRATEGY = defines.HTTPBIN_STRATEGY
     defines.STRATEGIES = [defines.HTTPBIN_STRATEGY, defines.GOOGLE_STRATEGY]
+    defines.WRITE_INTERVAL = 30
 
 defines()

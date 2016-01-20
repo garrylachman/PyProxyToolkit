@@ -34,14 +34,20 @@ optional arguments:
   -o O        Proxy list out file
   -t T        Number of threads
   -x X        Timeout in sec
+  -w W        Write results to file interval in sec
   -s {httpbinStrategy,googleStrategy}
-                        Select strategy - httpbinStrategy,googleStrategy
+                        Select strategy
 ```
 example
 
 ```
 python3 -m PyProxyToolkit.Console -i in.txt -o out.txt -t 30 -X 30 -s googleStrategy
 ```
+
+##Write results interval
+with -w option you can select the interval bewteen results output to file.
+when working on big proxies list you might want to see the results while proxy checker working.
+the default values is 30 sec.
 
 ##Strategies
 Strategy provide the request url and matching logic.

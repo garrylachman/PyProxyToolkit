@@ -23,18 +23,26 @@ class ConsoleCase(unittest.TestCase):
         return suite
 
     def setUp(self):
-        self.threads = 5;
+        self.threads = 2
         self.timeout = 10
+        self.write_interval=5
         self.strategy = 'googleStrategy'
-        sys.argv = [sys.argv[0], '-i=in.txt', '-o=out.txt', '-t='+str(self.threads), '-x='+str(self.timeout), '-s='+str(self.strategy)]
+        sys.argv = [sys.argv[0],
+                    '-i=in.txt',
+                    '-o=out.txt',
+                    '-t='+str(self.threads),
+                    '-x='+str(self.timeout),
+                    '-s='+str(self.strategy),
+                    '-w='+str(self.write_interval)]
         self.console = Console.Console()
 
     def test_properties(self):
-        self.assertEquals(self.console.inFile.name, "in.txt")
-        self.assertEquals(self.console.outFile.name, "out.txt")
-        self.assertEquals(self.console.numOfThreads, self.threads)
+        self.assertEquals(self.console.in_file.name, "in.txt")
+        self.assertEquals(self.console.out_file.name, "out.txt")
+        self.assertEquals(self.console.num_of_threads, self.threads)
         self.assertEquals(self.console.timeout, self.timeout)
         self.assertEquals(self.console.strategy, self.strategy)
+        self.assertEquals(self.console.write_interval, self.write_interval)
 
 if __name__ == '__main__':
     unittest.main()
