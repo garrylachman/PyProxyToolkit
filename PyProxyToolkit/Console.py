@@ -113,10 +113,5 @@ class Console:
         writer.cancel()
         write_to_file(results)
 
-        #out_rows = list(map(lambda x: '{0}:{1}'.format(x.host, x.port), results))
-        #[self.out_file.write('{0}\n'.format(line)) for line in out_rows]
-        #self.logger.debug(out_rows)
-
-
 if __name__ == "__main__":
     console = Console()
