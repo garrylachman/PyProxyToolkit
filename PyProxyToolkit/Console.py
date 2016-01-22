@@ -106,6 +106,8 @@ class Console:
             self.out_file.flush()
             self.logger.debug('[Write {0} results to file]'.format(len(local_results)))
             self.logger.debug(out_rows)
+            if work_queue.empty() is True:
+                writer.cancel()
 
         writer = PerpetualTimer(self.write_interval, write_to_file, results)
         writer.start()
