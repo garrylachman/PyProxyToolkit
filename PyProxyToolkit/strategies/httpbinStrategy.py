@@ -19,7 +19,7 @@ import sys
 class HttpbinStrategy(StrategyAbstract):
     def __init__(self):
         super(HttpbinStrategy, self).__init__()
-        self.url = 'http://httpbin.org/ip'
+        self._url = 'http://httpbin.org/ip'
 
     def match(self, response, proxy: Proxy):
         json_response = json.loads(response)

@@ -42,7 +42,12 @@ class Worker(threading.Thread):
         while True:
             data = self.q.get()
 
-            self.checker.check(data)
+            # try catch checker - prevent thread lock in-case of internal exception
+            try:
+                self.checker.check(data)
+            except:
+                pass
+
             msg = "Fail"
             if data.isValid is True:
                 self.results.append(data)

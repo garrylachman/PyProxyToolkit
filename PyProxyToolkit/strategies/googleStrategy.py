@@ -18,7 +18,7 @@ import sys
 class GoogleStrategy(StrategyAbstract):
     def __init__(self):
         super(GoogleStrategy, self).__init__()
-        self.url = 'https://www.google.com/search?q=rev.proxies.online'
+        self._url = 'https://www.google.com/search?q=rev.proxies.online'
 
     def match(self, response, proxy: Proxy):
         try:

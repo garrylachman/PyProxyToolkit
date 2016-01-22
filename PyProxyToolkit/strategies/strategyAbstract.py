@@ -17,8 +17,12 @@ import logging
 
 class StrategyAbstract:
     def __init__(self):
-        self.url = None
+        self._url = None
         self.logger = logging.getLogger(defines.LOGGER_NAME)
+
+    @property
+    def url(self):
+        return self._url
 
     def match(self, response, proxy: Proxy):
         pass
