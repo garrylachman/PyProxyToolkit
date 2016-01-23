@@ -28,13 +28,13 @@ usage: Console.py [-h] -i I -o O [-t T] [-x X]
 PyProxyChecker
 
 optional arguments:
-  -h, --help  show this help message and exit
-  -i I        Proxy list in file
-  -o O        Proxy list out file
-  -t T        Number of threads
-  -x X        Timeout in sec
-  -w W        Write results to file interval in sec
-  -s {httpbinStrategy,googleStrategy}
+  -h, --help            show this help message and exit
+  -i I                  Proxy list in file
+  -o O                  Proxy list out file (append)
+  -t T                  Number of threads
+  -x X                  Timeout in sec
+  -w W                  Write results to file interval in sec
+  -s {httpbinStrategy,googleStrategy,httpbinAnonymousStrategy}
                         Select strategy
 ```
 example
