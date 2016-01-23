@@ -16,6 +16,7 @@ from .proxy import Proxy
 from .check import Check
 from .strategies.httpbinStrategy import HttpbinStrategy
 from .strategies.googleStrategy import GoogleStrategy
+from .strategies.httpbinAnonymousStrategy import HttpbinAnonymousStrategy
 import logging
 import threading
 
@@ -32,6 +33,8 @@ class Worker(threading.Thread):
             self.strategy = HttpbinStrategy()
         elif strategy == defines.GOOGLE_STRATEGY:
             self.strategy = GoogleStrategy()
+        elif strategy == defines.HTTPBIN_ANONYMOUS_STRATEGY:
+            self.strategy = HttpbinAnonymousStrategy()
         # Todo: rise exception if not stragegy found
 
         self.checker = Check(self.strategy, self.timeout)

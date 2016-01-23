@@ -26,7 +26,7 @@ class ConsoleCase(unittest.TestCase):
         self.threads = 2
         self.timeout = 10
         self.write_interval=5
-        self.strategy = 'googleStrategy'
+        self.strategy = 'httpbinAnonymousStrategy'
         sys.argv = [sys.argv[0],
                     '-i=in.txt',
                     '-o=out.txt',

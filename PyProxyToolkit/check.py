@@ -15,6 +15,7 @@ from .defines import defines
 from .proxy import Proxy
 from .strategies.strategyAbstract import StrategyAbstract
 from .strategies.httpbinStrategy import HttpbinStrategy
+from .strategies.httpbinAnonymousStrategy import HttpbinAnonymousStrategy
 import logging
 import http
 import urllib.request, urllib.parse, urllib.error

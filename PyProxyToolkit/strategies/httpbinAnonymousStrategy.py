@@ -11,16 +11,11 @@ without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
 See the GNU Lesser General Public License for more details.
 """
 
-from distutils.core import setup
+from .httpbinStrategy import HttpbinStrategy
+from ..proxy import Proxy
+import json
+import sys
 
-setup(
-        name='PyProxyToolkit',
-        version='0.0.7',
-        packages=['PyProxyToolkit', 'PyProxyToolkit.strategies'],
-        py_modules=['PyProxyToolkit.Console'],
-        url='http://rev.proxies.online',
-        license='GPL',
-        author='Garry Lachman',
-        author_email='garry@lachman.co',
-        description='Python proxy checker toolkit'
-)
+class HttpbinAnonymousStrategy(HttpbinStrategy):
+    def __init__(self):
+        super(HttpbinAnonymousStrategy, self).__init__(matchIP=True)

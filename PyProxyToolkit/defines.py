@@ -18,8 +18,9 @@ def defines():
     defines.TIMEOUT = 30
     defines.HTTPBIN_STRATEGY = "httpbinStrategy"
     defines.GOOGLE_STRATEGY = "googleStrategy"
+    defines.HTTPBIN_ANONYMOUS_STRATEGY = "httpbinAnonymousStrategy"
     defines.DEFAULT_STRATEGY = defines.HTTPBIN_STRATEGY
-    defines.STRATEGIES = [defines.HTTPBIN_STRATEGY, defines.GOOGLE_STRATEGY]
+    defines.STRATEGIES = [defines.HTTPBIN_STRATEGY, defines.GOOGLE_STRATEGY, defines.HTTPBIN_ANONYMOUS_STRATEGY]
     defines.WRITE_INTERVAL = 30
 
 defines()
