@@ -18,11 +18,15 @@ import logging
 class StrategyAbstract:
     def __init__(self):
         self._url = None
+        self.ssl_mode = False
         self.logger = logging.getLogger(defines.LOGGER_NAME)
 
     @property
     def url(self):
         return self._url
+
+    def setSSLMode(self, ssl_mode):
+        self.ssl_mode = ssl_mode
 
     def match(self, response, proxy: Proxy):
         pass

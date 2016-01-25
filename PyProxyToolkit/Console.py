@@ -31,6 +31,7 @@ class Console:
         self.timeout = defines.TIMEOUT
         self.strategy = None
         self.write_interval = defines.WRITE_INTERVAL
+        self.ssl_mode = False
 
         # Configure
         self.configure()
@@ -70,6 +71,7 @@ class Console:
         parser.add_argument('-x', default=defines.TIMEOUT, type=int, help='Timeout in sec')
         parser.add_argument('-w', default=defines.WRITE_INTERVAL, type=int, help='Write results to file interval in sec')
         parser.add_argument('-s', default=defines.DEFAULT_STRATEGY, choices=defines.STRATEGIES, help='Select strategy')
+        parser.add_argument('-ssl', default="no", choices=['yes', 'no'], help='SSL Mode')
 
         args = parser.parse_args()
         self.logger.debug(args)
@@ -79,6 +81,8 @@ class Console:
         self.timeout = args.x
         self.strategy = args.s
         self.write_interval = args.w
+        if args.ssl == "yes":
+            self.ssl_mode = True
 
     def run(self):
         queue_lock = threading.Lock()
@@ -87,7 +91,7 @@ class Console:
         results = []
 
         for i in range(self.num_of_threads):
-            thread = Worker(i, "Worker-"+str(i), work_queue, self.timeout, self.strategy, results)
+            thread = Worker(i, "Worker-"+str(i), work_queue, self.timeout, self.strategy, self.ssl_mode, results)
             thread.setDaemon(True)
             thread.start()
             threads.append(thread)

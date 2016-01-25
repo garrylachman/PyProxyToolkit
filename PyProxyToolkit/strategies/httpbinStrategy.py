@@ -22,6 +22,12 @@ class HttpbinStrategy(StrategyAbstract):
         self._url = 'http://httpbin.org/ip'
         self._matchIP = matchIP
 
+    @property
+    def url(self):
+        if self.ssl_mode:
+            return 'https://httpbin.org/ip'
+        return self._url
+
     def match(self, response, proxy: Proxy):
         json_response = json.loads(response)
         try:

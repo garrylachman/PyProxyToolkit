@@ -33,7 +33,8 @@ class ConsoleCase(unittest.TestCase):
                     '-t='+str(self.threads),
                     '-x='+str(self.timeout),
                     '-s='+str(self.strategy),
-                    '-w='+str(self.write_interval)]
+                    '-w='+str(self.write_interval),
+                    '-ssl=yes']
         self.console = Console.Console()
 
     def test_properties(self):

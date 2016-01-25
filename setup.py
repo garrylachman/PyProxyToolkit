@@ -15,7 +15,7 @@ from distutils.core import setup
 
 setup(
         name='PyProxyToolkit',
-        version='0.0.7',
+        version='0.0.8',
         packages=['PyProxyToolkit', 'PyProxyToolkit.strategies'],
         py_modules=['PyProxyToolkit.Console'],
         url='http://rev.proxies.online',

@@ -21,13 +21,14 @@ import logging
 import threading
 
 class Worker(threading.Thread):
-    def __init__(self, threadID, name, q, timeout, strategy,results):
+    def __init__(self, threadID, name, q, timeout, strategy, ssl_mode, results):
         threading.Thread.__init__(self)
         self.threadID = threadID
         self.q = q
         self.name = name
         self.results = results
         self.timeout = timeout
+        self.ssl_mode = ssl_mode
 
         if strategy == defines.HTTPBIN_STRATEGY:
             self.strategy = HttpbinStrategy()
@@ -36,6 +37,8 @@ class Worker(threading.Thread):
         elif strategy == defines.HTTPBIN_ANONYMOUS_STRATEGY:
             self.strategy = HttpbinAnonymousStrategy()
         # Todo: rise exception if not stragegy found
+
+        self.strategy.setSSLMode(self.ssl_mode)
 
         self.checker = Check(self.strategy, self.timeout)
         self.logger = logging.getLogger(defines.LOGGER_NAME)

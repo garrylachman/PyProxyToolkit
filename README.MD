@@ -36,6 +36,7 @@ optional arguments:
   -w W                  Write results to file interval in sec
   -s {httpbinStrategy,googleStrategy,httpbinAnonymousStrategy}
                         Select strategy
+  -ssl {yes,no}         SSL Mode
 ```
 example
 
