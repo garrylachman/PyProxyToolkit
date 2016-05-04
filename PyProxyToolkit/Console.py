@@ -45,6 +45,7 @@ class Console:
     def configure(self):
         self.logger = logging.getLogger(defines.LOGGER_NAME)
         self.logger.setLevel(logging.DEBUG)
+        self.logger.disabled = True;
 
         # create file handler which logs even debug messages
         fh = logging.FileHandler(defines.LOGGER_FILE)
@@ -72,6 +73,7 @@ class Console:
         parser.add_argument('-w', default=defines.WRITE_INTERVAL, type=int, help='Write results to file interval in sec')
         parser.add_argument('-s', default=defines.DEFAULT_STRATEGY, choices=defines.STRATEGIES, help='Select strategy')
         parser.add_argument('-ssl', default="no", choices=['yes', 'no'], help='SSL Mode')
+        parser.add_argument('-debug', default="no", choices=['yes', 'no'], help='Debug Mode')
 
         args = parser.parse_args()
         self.logger.debug(args)
@@ -83,6 +85,8 @@ class Console:
         self.write_interval = args.w
         if args.ssl == "yes":
             self.ssl_mode = True
+        if args.debug == "yes":
+            self.logger.disabled = False
 
     def run(self):
         queue_lock = threading.Lock()

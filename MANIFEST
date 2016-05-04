@@ -9,5 +9,8 @@ PyProxyToolkit/proxy.py
 PyProxyToolkit/worker.py
 PyProxyToolkit/strategies/__init__.py
 PyProxyToolkit/strategies/googleStrategy.py
+PyProxyToolkit/strategies/httpbinAnonymousStrategy.py
 PyProxyToolkit/strategies/httpbinStrategy.py
+PyProxyToolkit/strategies/judges.py
+PyProxyToolkit/strategies/judgesStrategy.py
 PyProxyToolkit/strategies/strategyAbstract.py

@@ -34,7 +34,8 @@ class ConsoleCase(unittest.TestCase):
                     '-x='+str(self.timeout),
                     '-s='+str(self.strategy),
                     '-w='+str(self.write_interval),
-                    '-ssl=yes']
+                    '-ssl=yes',
+                    '-debug=yes']
         self.console = Console.Console()
 
     def test_properties(self):

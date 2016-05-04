@@ -37,6 +37,7 @@ optional arguments:
   -s {httpbinStrategy,googleStrategy,httpbinAnonymousStrategy}
                         Select strategy
   -ssl {yes,no}         SSL Mode
+  -debug {yes,no}       Debug Mode
 ```
 example
 
