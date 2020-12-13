@@ -1,4 +1,4 @@
-#Python 3 Proxy Tookit - Fast Proxy Checker
+# Python 3 Proxy Tookit - Fast Proxy Checker
 Fast multi-threaded proxy checker based on strategies.
 
 Copyright (C) 2016 Garry Lachman <garry@lachman.co> under GNU LGPL
@@ -7,7 +7,7 @@ https://rev.proxies.online
 
 **Strategies:** *httpbinStrategy* (validate ip, default), *httpbinAnonymousStrategy* (validate ip - anonymous only, default), *googleStrategy* (validate if banned on google)
 
-##Installing
+## Installing
 Download the source code from github and run:
 
 ```
@@ -19,7 +19,7 @@ pip3 install PyProxyToolkit
 ```
 
 
-##Using
+## Using
 ```
 python3 -m PyProxyToolkit.Console -h
 usage: Console.py [-h] -i I -o O [-t T] [-x X]
@@ -45,12 +45,12 @@ example
 python3 -m PyProxyToolkit.Console -i in.txt -o out.txt -t 30 -X 30 -s googleStrategy
 ```
 
-##Write results interval
+## Write results interval
 with -w option you can select the interval bewteen results output to file.
 when working on big proxies list you might want to see the results while proxy checker working.
 the default values is 30 sec.
 
-##Strategies
+## Strategies
 Strategy provide the request url and matching logic.
 The checker sends request to strategy url and return the content for validation.
 
@@ -61,7 +61,7 @@ Supported strategies:
  3. **googleStrategy** - the strategy validate if the proxy is banned on Google
 
 
-##Licence
+## Licence
 Copyright (C) 2016 Garry Lachman <garry@lachman.co>
 
 This library is free software; you can redistribute it and/or
